@@ -13,7 +13,7 @@ require_once("conn/conexion.php");
 
 		$reload = 'index.php';
         //consulta principal para recuperar los datos
-        $sql = 'SELECT NOMBRE, TIPO, CONSUMO FROM AVI_AERONAVES';
+        $sql = 'SELECT ID_AERONAVE, NOMBRE, TIPO, CONSUMO FROM AVI_AERONAVES';
 				
 				
 		$query = mysqli_query($con,$sql);
@@ -27,7 +27,7 @@ require_once("conn/conexion.php");
             <th>Consumo</th>
 
 		      
-						<th>Modificar</th>
+				
 						<th>Acciones</th>
 				</tr>
 			</thead>
@@ -40,18 +40,17 @@ require_once("conn/conexion.php");
 	      	<td><?php echo $row['NOMBRE'];?></td>
 			<td><?php echo $row['TIPO'];?></td>
 			<td><?php echo $row['CONSUMO'];?></td>
-		
-			
-					 <td>
-					 
-						<input  type="hidden" name="id" id="id" value="<?php echo $row['ID_AERONAVE']?>" readonly >
-						<button type="submit" class="btn btn-info"><i class='nav-icon fa fa-pencil'></i></button>
-				
-				
-					</td>
-					<td>
 
-					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#dataUpload" data-id="<?php echo $row['ID_AERONAVE']?>"  ><i  class='nav-icon fa fa-image'  ></i></button>
+					<td>
+					<button type="button" class="btn btn-info" data-toggle="modal"
+					 data-target="#dataUpdate" 
+					 data-id="<?php echo $row['ID_AERONAVE']?>" 
+					 data-nombre="<?php echo $row['NOMBRE']?>"   
+					 data-tipo="<?php echo $row['TIPO']?>"
+					 data-consumo="<?php echo $row['CONSUMO']?>"
+			
+					 
+					 ><i class='nav-icon fa fa-pencil'></i> </button>
 					<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#dataDelete" data-id="<?php echo $row['ID_AERONAVE']?>"  ><i class='nav-icon fa fa-trash' ></i></button>
 					</td>
 				</tr>

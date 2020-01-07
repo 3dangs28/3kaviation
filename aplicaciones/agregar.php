@@ -4,38 +4,21 @@
 	require_once("../conn/conexion.php");
 
 	/*Inicia validacion del lado del servidor*/
-	if (empty($_POST['nombre'])){
-		$errors[] = "Nombre vacío";
-	} 
-	else if (empty($_POST['tipo'])){
-		$errors[] = "Tipo vacío";
-		 } 
-	 else if (empty($_POST['consumo'])){
-		$errors[] = "Consumo vacío";
-		 } 
-		
-		
-
-		else if (
-			!empty($_POST['nombre']) && 
-			!empty($_POST['tipo']) && 
-			!empty($_POST['consumo'])
-		
-			
-		){
- 
-		// escaping, additionally removing everything that could be (html/javascript-) code
-		$usr=1;
-		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));
-		$tipo=mysqli_real_escape_string($con,(strip_tags($_POST["tipo"],ENT_QUOTES)));
-		$consumo=mysqli_real_escape_string($con,(strip_tags($_POST["consumo"],ENT_QUOTES)));
-		
-        $estatus=1;
-
-		$sql="INSERT INTO AVI_AERONAVES (NOMBRE,TIPO,CONSUMO) 
-		VALUES ('".$nombre."','".$tipo."','".$consumo."')";
-
+	 if (empty($_POST['aplicacion'])){
+			$errors[] = "Aplicación vacío";
+		} 
 	
+		
+		else if (
+			!empty($_POST['aplicacion'])  
+
+		){
+
+		// escaping, additionally removing everything that could be (html/javascript-) code
+
+		$aplicacion=mysqli_real_escape_string($con,(strip_tags($_POST["aplicacion"],ENT_QUOTES)));
+	
+		$sql="INSERT INTO APLICACIONES ( APLICACION, FECHA_CREACION) VALUES ('".$aplicacion."',sysdate())";
 		$query_update = mysqli_query($con,$sql);
 			if ($query_update){
 				$messages[] = "Los datos han sido guardados satisfactoriamente.";

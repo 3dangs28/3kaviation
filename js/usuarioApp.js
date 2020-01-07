@@ -17,21 +17,25 @@ function load(page){
     $('#dataUpdate').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget) // Botón que activó el modal
       var id = button.data('id') // Extraer la información de atributos de datos
-      var perfil = button.data('perfil') // Extraer la información de atributos de datos
+      var rol = button.data('rol') // Extraer la información de atributos de datos
+      var aplicacion = button.data('aplicacion') // Extraer la información de atributos de datos
       var nombre = button.data('nombre') // Extraer la información de atributos de datos
       var apellido = button.data('apellido') // Extraer la información de atributos de datos
-      var usr = button.data('usr') // Extraer la información de atributos de datos
+      var correo = button.data('correo') // Extraer la información de atributos de datos
+      var nick = button.data('nick') // Extraer la información de atributos de datos
       var pass = button.data('pass') // Extraer la información de atributos de datos
-      var estatus = button.data('estatus') // Extraer la información de atributos de datos
+
 
       var modal = $(this)
       modal.find('.modal-title').text('Modificar usuario: '+nombre)
       modal.find('.modal-body #id').val(id)
-      modal.find('.modal-body #perfil').val(perfil)
+      modal.find('.modal-body #rol').val(rol)
+      modal.find('.modal-body #aplicacion').val(aplicacion)
       modal.find('.modal-body #nombre').val(nombre)
       modal.find('.modal-body #apellido').val(apellido)
-      modal.find('.modal-body #usr').val(usr)
-      modal.find('.modal-body #estatus').val(estatus)
+      modal.find('.modal-body #correo').val(correo)  
+      modal.find('.modal-body #nick').val(nick)
+      modal.find('.modal-body #pass').val(pass)
       $('.alert').hide();//Oculto alert
     })
     

@@ -16,17 +16,41 @@
       <div id="datos_ajax_register"></div>
       
 
+
+      <div class="form-group">
+                							
+                                     <?php require_once("conn/conexion.php");
+                                        $query = mysqli_query($con,"SELECT ID_APLICACION,APLICACION FROM APLICACIONES");
+                                     ?>
+                            
+                                    <select class="form-control" id="aplicacion" name="aplicacion" required>
+                                    <option value="">Seleccione aplicación</option>
+                            
+                                    <?php  while($row = mysqli_fetch_array($query)){  ?>    
+                                   <?php     echo "<option value=".$row['ID_APLICACION'].">".$row['APLICACION']."</option>";
+                                    }
+                                
+                                    ?>
+                            
+                            
+                               </select>
+                             
+                            
+             </div>
+                            
+
+
              <div class="form-group">
                 							
-         <?php require_once("conn/conexion.php");
-            $query = mysqli_query($con,"SELECT ID_PERFIL,PERFIL,DESCRIPCION FROM PERFILES");
+         <?php 
+            $query1 = mysqli_query($con,"SELECT ID_ROL,ROL FROM ROLES");
          ?>
 
-        <select class="form-control" id="perfil" name="perfil" required>
-        <option value="">Seleccione Perfil</option>
+        <select class="form-control" id="rol" name="rol" required>
+        <option value="">Seleccione Rol</option>
 
-        <?php  while($row = mysqli_fetch_array($query)){  ?>    
-       <?php     echo "<option value=".$row['ID_PERFIL'].">".$row['PERFIL']."</option>";
+        <?php  while($row1 = mysqli_fetch_array($query1)){  ?>    
+       <?php     echo "<option value=".$row1['ID_ROL'].">".$row1['ROL']."</option>";
         }
         mysqli_close($con);
         ?>
@@ -35,12 +59,12 @@
    </select>
  
 
-                						</div>
+</div>
 
       
 		     <div class="form-group">
            
-            <input type="text" class="form-control" id="nombre0" name="nombre" placeholder="Nombre:" required autocomplete="off" >
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre:" required autocomplete="off" >
          </div>
       
          <div class="form-group">
@@ -49,9 +73,15 @@
          </div>
 
    
+
          <div class="form-group">
          
-            <input type="text" class="form-control" id="usr" name="usr" placeholder="Usuario:" required autocomplete="off" >
+         <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo:" required autocomplete="off" >
+      </div>
+
+         <div class="form-group">
+         
+            <input type="text" class="form-control" id="nick" name="nick" placeholder="Nick:" required autocomplete="off" >
          </div>
    
          <div class="form-group">

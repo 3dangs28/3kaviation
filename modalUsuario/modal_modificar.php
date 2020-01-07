@@ -12,10 +12,24 @@
       <div class="modal-body">
 			<div id="datos_ajax"></div>
 
+
+      <div class="form-group">
+          <label for="lalo"  class="control-label">Aplicaión</label>
+              <input type="text" class="form-control" id="aplicacion" name="aplicaion"  disable="disable">
+              <input type="text" class="form-control" id="id" name="id">
+          </div>
+
+
+          <div class="form-group">
+          <label for="lalo"  class="control-label">Rol</label>
+              <input type="text" class="form-control" id="rol" name="rol" disable="disable" >
+          </div>
+
+
           <div class="form-group">
           <label for="lalo"  class="control-label">Nombre</label>
               <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre:" required autocomplete="off" >
-              <input type="text" class="form-control" id="id" name="id">
+              
           </div>
 
 
@@ -24,28 +38,16 @@
           <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido:" required autocomplete="off" >
           </div>
 
+
           <div class="form-group">
-                							
-                             
-                     
-                             <select class="form-control" id="perfil" name="perfil" required>
-                             <option value="">Seleccione Perfil</option>
-                     
-                             <?php  while($variable){  ?>    
-                            <?php     echo "<option value=".$row['ID_PERFIL'].">".$row['PERFIL']."</option>";
-                             }
-                   
-                             ?>
-                     
-                     
-                        </select>
-                      
-                     
-                                                 </div>
+        <label for="lalo"  class="control-label">Correo:</label>
+           <input type="text" class="form-control" id="correo" name="correo" placeholder="Correo:" required autocomplete="off" >
+        </div>
+    
 
         <div class="form-group">
-        <label for="lalo"  class="control-label">Usuario:</label>
-           <input type="text" class="form-control" id="usr" name="usr" placeholder="Usuario:" required autocomplete="off" >
+        <label for="lalo"  class="control-label">Nick:</label>
+           <input type="text" class="form-control" id="nick" name="nick" placeholder="Nick:" required autocomplete="off" >
         </div>
   
         <div class="form-group">
@@ -53,16 +55,7 @@
            <input type="password" class="form-control" id="pass" name="pass" placeholder="Contraseña" required autocomplete="off" >
         </div>
 
-        
-          <div class="form-group">
-          <label for="lalo"  class="control-label">Estatus</label>
-				                            <select class="form-control" id="estatus" name="estatus" required>
-				                      
-				                                <option value="1">Activo</option>
-				                                <option value="2">Inactivo</option>
 
-				                            </select>
-				                </div>
 
       </div>
       <div class="modal-footer">

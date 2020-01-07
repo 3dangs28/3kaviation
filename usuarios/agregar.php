@@ -4,8 +4,11 @@
 	require_once("../conn/conexion.php");
 
 	/*Inicia validacion del lado del servidor*/
-	 if (empty($_POST['perfil'])){
-			$errors[] = "Perfil vacío";
+	 if (empty($_POST['rol'])){
+			$errors[] = "Rol vacío";
+		} 
+		else if (empty($_POST['aplicacion'])){
+			$errors[] = "Aplicación vacío";
 		} 
 		else if (empty($_POST['nombre'])){
 			$errors[] = "Nombre vacío";
@@ -13,33 +16,40 @@
 		else if (empty($_POST['apellido'])){
 			$errors[] = "Apellido vacío";
 		} 
+		else if (empty($_POST['correo'])){
+			$errors[] = "Correo vacío";
+		} 
 	 
-		else if (empty($_POST['usr'])){
-			$errors[] = "Usuario vacío";
+		else if (empty($_POST['nick'])){
+			$errors[] = "Nick vacío";
 		} 
 		else if (empty($_POST['pass'])){
 			$errors[] = "Contraseña vacío";
 		} 
 		else if (
-			!empty($_POST['perfil']) && 
+			!empty($_POST['rol']) && 
+			!empty($_POST['aplicacion']) && 
 			!empty($_POST['nombre']) &&
 			!empty($_POST['apellido']) && 
-			!empty($_POST['usr']) &&  
+			!empty($_POST['correo']) && 
+			!empty($_POST['nick']) &&  
 			!empty($_POST['pass'])
 			
 		){
 
 		// escaping, additionally removing everything that could be (html/javascript-) code
 		
-		$perfil=mysqli_real_escape_string($con,(strip_tags($_POST["perfil"],ENT_QUOTES)));
+		$rol=mysqli_real_escape_string($con,(strip_tags($_POST["rol"],ENT_QUOTES)));
+		$aplicacion=$_POST["aplicacion"];
 		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));
 		$apel=mysqli_real_escape_string($con,(strip_tags($_POST["apellido"],ENT_QUOTES)));
-		$usr=mysqli_real_escape_string($con,(strip_tags($_POST["usr"],ENT_QUOTES)));
+		$correo=mysqli_real_escape_string($con,(strip_tags($_POST["correo"],ENT_QUOTES)));
+		$nick=mysqli_real_escape_string($con,(strip_tags($_POST["nick"],ENT_QUOTES)));
 		$pass=mysqli_real_escape_string($con,(strip_tags($_POST["pass"],ENT_QUOTES)));
 		$estatus = 1;
 
-		$sql="INSERT INTO USUARIOS  (ID_PERFIL , NOMBRE, APELLIDO, USUARIO, CLAVE, ESTATUS, FECHA_REG )
-		 VALUES ('".$perfil."','".$nombre."','".$apel."','".$usr."','".$pass."','".$estatus."',SYSDATE()
+		$sql="INSERT INTO USUARIOS  (ID_ROL ,ID_APLICACION, NOMBRE, APELLIDO, CORREO, NICK, PASS )
+		 VALUES ('".$rol."','".$aplicacion."','".$nombre."','".$apel."','".$correo."','".$nick."','".$pass."'
 		 )";
 		$query_update = mysqli_query($con,$sql);
 			if ($query_update){
