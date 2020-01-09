@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 07-01-2020 a las 22:15:16
+-- Tiempo de generación: 09-01-2020 a las 20:45:52
 -- Versión del servidor: 5.7.26
 -- Versión de PHP: 7.2.18
 
@@ -57,14 +57,15 @@ CREATE TABLE IF NOT EXISTS `avi_aeronaves` (
   `TIPO` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
   `CONSUMO` float DEFAULT NULL,
   PRIMARY KEY (`ID_AERONAVE`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `avi_aeronaves`
 --
 
 INSERT INTO `avi_aeronaves` (`ID_AERONAVE`, `NOMBRE`, `TIPO`, `CONSUMO`) VALUES
-(1, 'gato volador', 'gato', 12);
+(1, 'gato volador', 'gato', 13),
+(2, 'La nave del placer', 'super Gato', 11);
 
 -- --------------------------------------------------------
 
@@ -232,7 +233,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`ID_USUARIO`, `ID_APLICACION`, `ID_ROL`, `NOMBRE`, `APELLIDO`, `CORREO`, `NICK`, `PASS`) VALUES
-(1, 1, 1, 'angel', 'garcia', '3dangs28@gmail.com', 'agarcia', 'Ygh8b77t');
+(1, 1, 1, 'angel2', 'garcia2', '3dangs28@gmail.com', 'agarcia', 'Ygh8b77t');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

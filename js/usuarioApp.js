@@ -27,10 +27,9 @@ function load(page){
 
 
       var modal = $(this)
-      modal.find('.modal-title').text('Modificar usuario: '+nombre)
+      modal.find('.modal-title').text('Modificar usuario: '+nombre+' en aplicación: '+aplicacion)
       modal.find('.modal-body #id').val(id)
       modal.find('.modal-body #rol').val(rol)
-      modal.find('.modal-body #aplicacion').val(aplicacion)
       modal.find('.modal-body #nombre').val(nombre)
       modal.find('.modal-body #apellido').val(apellido)
       modal.find('.modal-body #correo').val(correo)  

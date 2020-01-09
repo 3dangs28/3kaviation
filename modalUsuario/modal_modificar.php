@@ -13,16 +13,11 @@
 			<div id="datos_ajax"></div>
 
 
-      <div class="form-group">
-          <label for="lalo"  class="control-label">Aplicaión</label>
-              <input type="text" class="form-control" id="aplicacion" name="aplicaion"  disable="disable">
-              <input type="text" class="form-control" id="id" name="id">
-          </div>
-
 
           <div class="form-group">
-          <label for="lalo"  class="control-label">Rol</label>
-              <input type="text" class="form-control" id="rol" name="rol" disable="disable" >
+         
+              <input type="text" class="form-control" id="rol" name="rol" disable="disable" readonly >
+              <input type="hidden" class="form-control" id="id" name="id">
           </div>
 
 

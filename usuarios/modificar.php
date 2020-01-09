@@ -7,48 +7,44 @@ require_once("../conn/conexion.php");
 	if (empty($_POST['id'])) {
            $errors[] = "ID vacío";
 		} 
-		else if (empty($_POST['perfil'])){
-			$errors[] = "Perfil vacío";
-		} 
+	
 		else if (empty($_POST['nombre'])){
 			$errors[] = "Nombre vacío";
 		} 
-		else if (empty($_POST['Descripcion'])){
-			$errors[] = "Descripción vacío";
-		} 
-		else if (empty($_POST['precio'])){
-			$errors[] = "Precio vacío";
-		} 
-		else if (empty($_POST['cantidad'])){
-			$errors[] = "Télefono vacío";
+		else if (empty($_POST['apellido'])){
+			$errors[] = "Apellido vacío";
 		} 
 		else if (empty($_POST['correo'])){
 			$errors[] = "Correo vacío";
 		} 
-		else if (empty($_POST['usr'])){
-			$errors[] = "Usuario vacío";
+		else if (empty($_POST['nick'])){
+			$errors[] = "Nick vacío";
 		} 
+	
 		else if (empty($_POST['pass'])){
 			$errors[] = "Contraseña vacío";
 		} 
 		else if (
 			!empty($_POST['id']) && 
-			!empty($_POST['perfil']) && 
 			!empty($_POST['nombre']) &&
-			!empty($_POST['apel']) &&
-			!empty($_POST['gen']) &&  
-			!empty($_POST['tel']) &&  
+			!empty($_POST['apellido']) &&
 			!empty($_POST['correo']) &&  
-			!empty($_POST['usr']) &&  
-			!empty($_POST['pass'])
+			!empty($_POST['nick']) &&  
+			!empty($_POST['pass'])   
 			
 		){
 
 		// escaping, additionally removing everything that could be (html/javascript-) code
-		$perfil=mysqli_real_escape_string($con,(strip_tags($_POST["perfil"],ENT_QUOTES)));
-		$descripcion=mysqli_real_escape_string($con,(strip_tags($_POST["descripcion"],ENT_QUOTES)));
 		$id=intval($_POST['id']);
-		$sql="UPDATE USR_PERFILES SET  PERFIL='".$perfil."', DESCRIPCION='".$descripcion."'	WHERE ID_PERFIL='".$id."'";
+		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));
+		$apellido=mysqli_real_escape_string($con,(strip_tags($_POST["apellido"],ENT_QUOTES)));
+		$correo=mysqli_real_escape_string($con,(strip_tags($_POST["correo"],ENT_QUOTES)));
+		$nick=mysqli_real_escape_string($con,(strip_tags($_POST["nick"],ENT_QUOTES)));
+		$pass=mysqli_real_escape_string($con,(strip_tags($_POST["pass"],ENT_QUOTES)));
+
+		
+
+		$sql="UPDATE USUARIOS SET  NOMBRE='".$nombre."', APELLIDO='".$apellido."', CORREO='".$correo."', NICK='".$nick."', PASS='".$pass."'	WHERE ID_USUARIO='".$id."'";
 		$query_update = mysqli_query($con,$sql);
 			if ($query_update){
 				$messages[] = "Los datos han sido actualizados satisfactoriamente.";

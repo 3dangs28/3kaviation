@@ -20,7 +20,9 @@
           <div class="col-sm-6">
             <h1>Estadísticas</h1>
           </div>
-       
+          <div class="col-sm-6">
+          <img src="img/3kaviationBarra.png" alt="" class="pull-right">
+          </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>

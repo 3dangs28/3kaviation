@@ -3,7 +3,9 @@
   <aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index4.php" class="brand-link">
-      <span class="brand-text font-weight-light">3kaviation</span>
+
+     
+      <img src="img/3kaviationBarra.png" alt="" width="70%" height="70%" >
     </a>
 
     <!-- Sidebar -->
@@ -11,7 +13,9 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
+          <!--
         <img src="img/3kaviation.jpg" class="img-circle elevation-2" alt="User Image"> 
+ -->
         </div>
         <div class="info">
           <a href="#" class="d-block">USUARIO 1</a>
