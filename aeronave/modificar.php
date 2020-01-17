@@ -26,7 +26,7 @@ require_once("../conn/conexion.php");
 
 		// escaping, additionally removing everything that could be (html/javascript-) code
 
-
+ 
 
 		$id=intval($_POST['id']);
 	

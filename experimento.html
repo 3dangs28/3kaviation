@@ -11,16 +11,49 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap4.css">
-  <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<script>
-			$( function() {
-				$( "#fecha_salida" ).datepicker({dateFormat: 'dd/mm/yy' });
-				$( "#fecha_llegada" ).datepicker({dateFormat: 'dd/mm/yy' });
 
-			} );
-			</script>
+<form>
+  <body>
+    <table id="tabla" name="tabla" class="egt">
+      <tr>
+        <th>Hoy</th>
+
+        <th>Mañana</th>
+
+        <th>Domingo</th>
+      </tr>
+
+      <tr>
+        <td>Soleado</td>
+
+        <td>Mayormente soleado</td>
+
+        <td>Parcialmente nublado</td>
+      </tr>
+
+      <tr>
+        <td>19°C</td>
+
+        <td>17°C</td>
+
+        <td>12°C</td>
+      </tr>
+
+      <tr>
+        <td>E 13 km/h</td>
+
+        <td>E 11 km/h</td>
+
+        <td>S 16 km/h</td>
+      </tr>
+    </table>
+  </body>
+<input type="submit" value="Guardar">
+<input type="button" value="Guardar2" >
+</form>
+</html>

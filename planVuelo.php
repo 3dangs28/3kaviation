@@ -3,7 +3,9 @@
   <body>
 	<?php include("inc/header.php"); ?>
 	<?php include("inc/menu.php"); ?>
-
+  <?php include("modalPlan/modal_agregar.php");?>
+  <?php include("modalPlan/modal_modificar.php");?>
+	<?php include("modalPlan/modal_eliminar.php");?>
 	
 	 
 	<div id="loader" class="text-center"> <img src="giphy.gif"></div>
@@ -18,7 +20,7 @@
           </div>
           <div class="col-sm-6">
 					<h3 class='text-right'>		
-				<button type="button" class="btn btn-success" ><i class='glyphicon glyphicon-plus'></i> Agregar</button>
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#dataRegister"><i class='glyphicon glyphicon-plus'></i> Agregar</button>
 			</h3>
           </div>
         </div>
@@ -57,7 +59,7 @@
 
 
   <?php include("inc/scripts.php"); ?>
-
+  <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
 
 	<script src="js/planes.js"></script>
 	<script>
