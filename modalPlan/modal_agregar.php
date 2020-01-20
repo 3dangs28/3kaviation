@@ -1,5 +1,6 @@
 
 
+
 <form id="guardarDatos">
 <div class="modal fade" id="dataRegister" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog modal-lg" role="document">
@@ -82,43 +83,71 @@
 
 
   <div class="form-row">
-    <div class="form-group col-md-4">
-      <label for="inputCity">Hora de salida</label>
-      <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="cal"><i class="fa fa-clock-o"></i></span>
-                  </div>
-                  <input type="text" class="form-control pull-right" id="fecha_salida" name="fecha_salida">
-                </div>
+
+
+
+  <div class="container">
+    <div class="row">
+        <div class='col-sm-4'>
+            <div class="form-group">
+              
+
+              
+            </div>
+        </div>
+
+ 
+ 
     </div>
+</div>
+
+
+
+
+
+
+
 
     <div class="form-group col-md-4">
-    <label for="inputCity">Hora de llegada</label>
+    <div class="bootstrap-timepicker">
+      <label for="inputSalida">Hora de salida</label>
       <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="cal"><i class="fa fa-clock-o"></i></span>
-                  </div>
-                  <input type="text" class="form-control pull-right" id="fecha_llegada" name="fecha_llegada">
-                </div>
+  
+          <input type="text" id="salida" class="form-control timepicker">
 
+           <div class="input-group-append">
+             <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
+          </div>
+      </div>
+   </div>
+   </div>
+  
 
+    <div class="form-group col-md-4">
+    <div class="bootstrap-timepicker">
+      <label for="inputLLegada">Hora de llegada</label>
+      <div class="input-group">
+  
+          <input type="text" id="llegada" class="form-control timepicker">
+
+           <div class="input-group-append">
+             <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
+          </div>
+      </div>
+   </div>
     </div>
-
-
-
 
 
 
 
     <div class="form-group col-md-4">
     <label for="inputCity">Fecha de viaje</label>
-      <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="cal"><i class="fa fa-calendar"></i></span>
+    <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                    </div>
+                    <input type="text" id="fechaViaje" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
                   </div>
-                  <input type="text" class="form-control pull-right" id="fecha_llegada" name="fecha_llegada">
-                </div>
-
 
     </div>
 
