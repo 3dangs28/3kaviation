@@ -27,12 +27,13 @@ require_once("conn/conexion.php");
 		<table ID="example1" class="table table-bordered">
 			  <thead>
 				<tr>
-
+				<th>Fecha</th>
         <th>Nombre</th>
         <th>L.SALIDA</th>
         <th>L.LLEGADA</th>
         <th>Propietario</th>
-        <th>Fecha</th>
+				<th>Tripu.</th>
+				<th>Pasaj.</th>
         <th>Status</th>
 		<th>Acciones</th>
 				</tr>
@@ -43,21 +44,24 @@ require_once("conn/conexion.php");
 			while($row = mysqli_fetch_array($query)){
 				?>
 				<tr>
-
+				<td><?php echo $row['FECHA_VIAJE'];?></td>
 					<td><?php echo $row['NOMBRE'];?></td>
                     <td><?php echo $row['AERO_SALIDA'];?></td>
-                    <td><?php echo $row['AERO_ENTRADA'];?></td>
+                    <td><?php echo $row['AERO_LLEGADA'];?></td>
                     <td><?php echo $row['PROPIETARIO'];?></td>
-                    <td><?php echo $row['FECHA_VIAJE'];?></td>
-               
+                 
+               <td>	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#dataRegisterTripu" ><i class='nav-icon fa fa-plane' ></i><i class='nav-icon fa fa-plus-circle' ></i></button>
+							 </td>
+							 <td>	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#dataAgregarTripulante" ><i class='nav-icon fa fa-user-plus' ></i></button>
+							 </td>
            
-										<td>
+							 <td>
 										<?php  
 										if ($row['ESTATUS']==1){
-											echo 'ACTIVO';
+											echo 'ABIERTA';
 										}
 										else{
-											echo 'INACTIVO';
+											echo 'CERRADA';
 										}
 										;?>
 										</td>

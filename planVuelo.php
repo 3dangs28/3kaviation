@@ -4,6 +4,7 @@
 	<?php include("inc/header.php"); ?>
 	<?php include("inc/menu.php"); ?>
   <?php include("modalPlan/modal_agregar.php");?>
+  <?php include("modalPlan/modal_agregar_tripu.php");?>
   <?php include("modalPlan/modal_modificar.php");?>
 	<?php include("modalPlan/modal_eliminar.php");?>
 	
@@ -97,10 +98,11 @@
     //Initialize Select2 Elements
     $('.select2').select2()
 
+   
     //Datemask dd/mm/yyyy
-    $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
-    //Datemask2 mm/dd/yyyy
-    $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+    $('#datemask').inputmask('yyyy/mm/dd', { 'placeholder': 'yyyy/mm/dd' })
+    //Datemask2 yyyy/mm/dd
+    $('#datemask2').inputmask('yyyy/mm/dd', { 'placeholder': 'yyyy/mm/dd' })
     //Money Euro
     $('[data-mask]').inputmask()
 
@@ -110,7 +112,7 @@
     $('#reservationtime').daterangepicker({
       timePicker         : true,
       timePickerIncrement: 30,
-      format             : 'MM/DD/YYYY h:mm A'
+      format             : 'yyyy/mm/dd h:mm A'
     })
     //Date range as a button
     $('#daterange-btn').daterangepicker(

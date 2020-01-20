@@ -51,7 +51,7 @@
 
 <div class="form-group col-md-6">
   <label for="inputPassword4">Propietario</label>
-  <input type="propietario" class="form-control" id="inputPassword4" placeholder="Propietario">
+  <input type="propietario" class="form-control" id="propietario" name="propietario" placeholder="Propietario">
 </div>
 
 </div>
@@ -60,7 +60,7 @@
 
     <div class="form-group col-md-6">
       <label for="inputEmail4">Aeropuerto salida</label>
-      <select id="inputState" class="form-control">
+      <select id="salidaLugar" name="salidaLugar" class="form-control">
         <option selected>Seleccione lugar</option>
         <option>Panamá</option>
         <option>Bocas del toro</option>
@@ -70,7 +70,7 @@
 
     <div class="form-group col-md-6">
       <label for="inputPassword4">Aeropuerto llegada</label>
-      <select id="inputState" class="form-control">
+      <select id="llegadaLugar" name="llegadaLugar" class="form-control">
       <option selected>Seleccione lugar</option>
         <option>Panamá</option>
         <option>Bocas del toro</option>
@@ -113,7 +113,7 @@
       <label for="inputSalida">Hora de salida</label>
       <div class="input-group">
   
-          <input type="text" id="salida" class="form-control timepicker">
+          <input type="text" id="salidaHora" name="salidaHora" class="form-control timepicker">
 
            <div class="input-group-append">
              <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
@@ -128,7 +128,7 @@
       <label for="inputLLegada">Hora de llegada</label>
       <div class="input-group">
   
-          <input type="text" id="llegada" class="form-control timepicker">
+          <input type="text" id="llegadaHora" name="llegadaHora" class="form-control timepicker">
 
            <div class="input-group-append">
              <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
@@ -146,7 +146,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa fa-calendar"></i></span>
                     </div>
-                    <input type="text" id="fechaViaje" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                    <input type="text" id="fechaViaje" name="fechaViaje" class="form-control" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask="">
                   </div>
 
     </div>
@@ -163,7 +163,7 @@
 
   <div class="form-group">
     <label for="inputAddress">Declaración sanitaria</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="Escriba la declaración">
+    <input type="text" class="form-control" id="declaracion" name="declaracion" placeholder="Escriba la declaración">
   </div>
 		
       </div>

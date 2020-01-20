@@ -3,7 +3,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
     <div class="modal-header">
-                    <h5 class="modal-title">Modificar rol</h5>
+                    <h5 class="modal-title">Modificar Plan</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -13,8 +13,8 @@
 
 
           <div class="form-group">
-            <label for="codigo" class="control-label">Rol:</label>
-            <input type="text" class="form-control" id="rol" name="rol" placeholder="Nombre del rol" required >
+            <label for="codigo" class="control-label">Plan:</label>
+            <input type="text" class="form-control" id="rol" name="rol" placeholder="Nombre del plan" required >
 			<input type="hidden" class="form-control" id="id" name="id">
           </div>
 
