@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 09-01-2020 a las 20:45:52
--- Versión del servidor: 5.7.26
--- Versión de PHP: 7.2.18
+-- Tiempo de generación: 20-01-2020 a las 20:56:49
+-- Versión del servidor: 5.7.21
+-- Versión de PHP: 5.6.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `avi_aeronaves` (
   `TIPO` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
   `CONSUMO` float DEFAULT NULL,
   PRIMARY KEY (`ID_AERONAVE`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `avi_aeronaves`
@@ -65,7 +65,8 @@ CREATE TABLE IF NOT EXISTS `avi_aeronaves` (
 
 INSERT INTO `avi_aeronaves` (`ID_AERONAVE`, `NOMBRE`, `TIPO`, `CONSUMO`) VALUES
 (1, 'gato volador', 'gato', 13),
-(2, 'La nave del placer', 'super Gato', 11);
+(2, 'La nave del placer', 'super Gato', 11),
+(3, 'nave voladora 2', 'camello', 12);
 
 -- --------------------------------------------------------
 
@@ -114,8 +115,8 @@ CREATE TABLE IF NOT EXISTS `avi_plan_vuelo` (
   `AERO_SALIDA` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL,
   `AERO_LLEGADA` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL,
   `PROPIETARIO` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `HORA_SALIDA` date DEFAULT NULL,
-  `HORA_LLEGADA` date DEFAULT NULL,
+  `HORA_SALIDA` time DEFAULT NULL,
+  `HORA_LLEGADA` time DEFAULT NULL,
   `FECHA_VIAJE` date DEFAULT NULL,
   `DECLA_SANITARIA` text COLLATE utf8_spanish_ci,
   `ESTATUS` varchar(1) COLLATE utf8_spanish_ci DEFAULT '0',
@@ -123,7 +124,17 @@ CREATE TABLE IF NOT EXISTS `avi_plan_vuelo` (
   PRIMARY KEY (`ID_PLAN`),
   KEY `ID_AERONAVE` (`ID_AERONAVE`),
   KEY `ID_FIRMA` (`ID_FIRMA`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `avi_plan_vuelo`
+--
+
+INSERT INTO `avi_plan_vuelo` (`ID_PLAN`, `ID_AERONAVE`, `AERO_SALIDA`, `AERO_LLEGADA`, `PROPIETARIO`, `HORA_SALIDA`, `HORA_LLEGADA`, `FECHA_VIAJE`, `DECLA_SANITARIA`, `ESTATUS`, `ID_FIRMA`) VALUES
+(1, 1, 'Bocas del toro', 'Panamá', 'Un gato', '00:00:00', '00:00:00', '2020-12-28', 'una declaración', '1', 1),
+(2, 1, 'Panamá', 'Bocas del toro', 'Un gato', '00:00:00', '00:00:00', '2020-12-12', 'bdas', '1', 1),
+(3, 1, 'Bocas del toro', 'Panamá', 'Un gato', '13:30:00', '15:30:00', '2020-12-25', 'nada', '1', 1),
+(4, 2, 'Chiriquí', 'Panamá', 'copa', '14:30:00', '17:30:00', '2020-12-10', 'nada de nada', '1', 1);
 
 -- --------------------------------------------------------
 
