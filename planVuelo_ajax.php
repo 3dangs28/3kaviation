@@ -50,7 +50,7 @@ require_once("conn/conexion.php");
                     <td><?php echo $row['AERO_LLEGADA'];?></td>
                     <td><?php echo $row['PROPIETARIO'];?></td>
                  
-               <td>	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#dataRegisterTripu" ><i class='nav-icon fa fa-plane' ></i><i class='nav-icon fa fa-plus-circle' ></i></button>
+               <td>	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#dataRegisterTripu" data-id="<?php echo $row['ID_PLAN']?>" ><i class='nav-icon fa fa-plane' ></i><i class='nav-icon fa fa-plus-circle' ></i></button>
 							 </td>
 							 <td>	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#dataAgregarTripulante" ><i class='nav-icon fa fa-user-plus' ></i></button>
 							 </td>
@@ -66,7 +66,7 @@ require_once("conn/conexion.php");
 										;?>
 										</td>
                
-					<td>
+					<td> 
                         <button type="button" class="btn btn-info" data-toggle="modal" 
 						data-target="#dataUpdate" 
                         data-id="<?php echo $row['ID_PLAN']?>" 
@@ -103,6 +103,11 @@ require_once("conn/conexion.php");
 	}
 	mysqli_close($con);
 ?>
+
+
+
+
+<script src="js/planes.js"></script>
   <script>
   $(function () {
     $("#example1").DataTable();

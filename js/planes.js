@@ -33,11 +33,9 @@ function load(page){
       modal.find('.modal-body #propietario').val(propietario)
       modal.find('.modal-body #salidaLugar').val(salidaLugar)
       modal.find('.modal-body #llegadaLugar').val(llegadaLugar)
-
       modal.find('.modal-body #salidaHora').val(salidaHora)
       modal.find('.modal-body #llegadaHora').val(llegadaHora)
       modal.find('.modal-body #fechaViaje').val(fechaViaje)
-
       $('.alert').hide();//Oculto alert
     })
     
@@ -46,7 +44,9 @@ function load(page){
       var id = button.data('id') // Extraer la información de atributos de datos
       var modal = $(this)
       modal.find('#id').val(id)
+      $('.alert').hide();//Oculto alert
     })
+
 
     $( "#actualidarDatos" ).submit(function( event ) {
       var parametros = $(this).serialize();
@@ -83,23 +83,7 @@ function load(page){
           });
         event.preventDefault();
       });
-      $( "#guardarDatosTripu" ).submit(function( event ) {
-        var parametros = $(this).serialize();
-             $.ajax({
-                    type: "POST",
-                    url: "planes/agregarTripu.php",
-                    data: parametros,
-                     beforeSend: function(objeto){
-                        $("#datos_ajax_register").html("Mensaje: Cargando...");
-                      },
-                    success: function(datos){
-                    $("#datos_ajax_register").html(datos);
-                    
-                    load(1);
-                  }
-            });
-          event.preventDefault();
-        });
+
       
       $( "#eliminarDatos" ).submit(function( event ) {
       var parametros = $(this).serialize();
@@ -119,3 +103,31 @@ function load(page){
           });
         event.preventDefault();
       });
+
+      $('#dataRegisterTripu').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Botón que activó el modal
+        var id = button.data('id') // Extraer la información de atributos de datos
+        var modal = $(this)
+        modal.find('.modal-body #id').val(id)
+  
+      })
+  
+
+
+      $( "#guardarDatosTripu" ).submit(function( event ) {
+        var parametros = $(this).serialize();
+             $.ajax({
+                    type: "POST",
+                    url: "planes/agregarTripu.php",
+                    data: parametros,
+                     beforeSend: function(objeto){
+                        $("#datos_ajax_register").html("Mensaje: Cargando...");
+                      },
+                    success: function(datos){
+                    $("#datos_ajax_register").html(datos);
+                    
+                    load(1);
+                  }
+            });
+          event.preventDefault();
+        });

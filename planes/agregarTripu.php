@@ -4,64 +4,67 @@
 	require_once("../conn/conexion.php");
 
 	/*Inicia validacion del lado del servidor*/
-	 if (empty($_POST['avion'])){
-			$errors[] = "Avión vacío"; 
+	 if (empty($_POST['id'])){
+			$errors[] = "id vacío"; 
 		} 
-		else if (empty($_POST['propietario'])){
-			$errors[] = "Propietario vacío";
+		else if (empty($_POST['nombre'])){
+			$errors[] = "Nombre vacío";
 		} 
-		else if (empty($_POST['salidaLugar'])){
-			$errors[] = "Lugar de salida vacío";
+		else if (empty($_POST['apellido'])){
+			$errors[] = "Apellido vacío";
 		} 
-		else if (empty($_POST['llegadaLugar'])){
-			$errors[] = "Lugar de llegada vacío";
+		else if (empty($_POST['funcion'])){
+			$errors[] = "Función vacío";
 		} 
-		else if (empty($_POST['salidaHora'])){
-			$errors[] = "Hora de salida vacío";
+		else if (empty($_POST['licencia'])){
+			$errors[] = "Licencia vacío";
 		} 
-		else if (empty($_POST['llegadaHora'])){
-			$errors[] = "Hora de llegada vacío";
+		else if (empty($_POST['nacionalidad'])){
+			$errors[] = "Nacionalidad vacío";
 		}
-		else if (empty($_POST['fechaViaje'])){
-			$errors[] = "Fecha de viaje vacío";
+		else if (empty($_POST['fechaNac'])){
+			$errors[] = "Fecha de nacimiento vacío";
 		} 
-		else if (empty($_POST['declaracion'])){
-			$errors[] = "Declaración vacío";
+		else if (empty($_POST['pasaporte'])){
+			$errors[] = "Pasaporte vacío";
+		} 
+
+		else if (empty($_POST['fechaPasa'])){
+			$errors[] = "Fecha de expiracion de pasaporte vacío";
 		} 
 	 
 		else if (
-			!empty($_POST['avion']) && 
-			!empty($_POST['propietario']) &&
-			!empty($_POST['salidaLugar']) &&
-			!empty($_POST['llegadaLugar']) && 
-			!empty($_POST['salidaHora']) && 
-			!empty($_POST['llegadaHora']) && 
-			!empty($_POST['fechaViaje']) &&
-			!empty($_POST['declaracion'])
+			!empty($_POST['id']) && 
+			!empty($_POST['nombre']) &&
+			!empty($_POST['apellido']) &&
+			!empty($_POST['funcion']) && 
+			!empty($_POST['licencia']) && 
+			!empty($_POST['nacionalidad']) && 
+			!empty($_POST['fechaNac']) &&
+			!empty($_POST['pasaporte']) &&
+			!empty($_POST['fechaPasa']) 
 			
 		){
 
 		// escaping, additionally removing everything that could be (html/javascript-) code
-		$firma=1;
-		$avion=mysqli_real_escape_string($con,(strip_tags($_POST["avion"],ENT_QUOTES)));
-		$propietario=mysqli_real_escape_string($con,(strip_tags($_POST["propietario"],ENT_QUOTES)));
-		$sl=mysqli_real_escape_string($con,(strip_tags($_POST["salidaLugar"],ENT_QUOTES)));
-		$ll=mysqli_real_escape_string($con,(strip_tags($_POST["llegadaLugar"],ENT_QUOTES)));
-		$sh=mysqli_real_escape_string($con,(strip_tags($_POST["salidaHora"],ENT_QUOTES)));
+		$id=intval($_POST['id']);
+		$nom=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));
+		$apel=mysqli_real_escape_string($con,(strip_tags($_POST["apellido"],ENT_QUOTES)));
+		$fun=mysqli_real_escape_string($con,(strip_tags($_POST["funcion"],ENT_QUOTES)));
+		$lic=mysqli_real_escape_string($con,(strip_tags($_POST["licencia"],ENT_QUOTES)));
+		$nac=mysqli_real_escape_string($con,(strip_tags($_POST["nacionalidad"],ENT_QUOTES)));
 		
-		$sh  =date("H:i:s", strtotime($sh));
 	
-		$lh=mysqli_real_escape_string($con,(strip_tags($_POST["llegadaHora"],ENT_QUOTES)));
-		$lh  =date("H:i:s", strtotime($lh));
-		$fViaje=mysqli_real_escape_string($con,(strip_tags($_POST["fechaViaje"],ENT_QUOTES)));
-		$declaracion=mysqli_real_escape_string($con,(strip_tags($_POST["declaracion"],ENT_QUOTES)));
-        $estatus='1';
+		$fn=mysqli_real_escape_string($con,(strip_tags($_POST["fechaNac"],ENT_QUOTES)));
+		$fn  =date("H:i:s", strtotime($fn));
+		$pasaporte=mysqli_real_escape_string($con,(strip_tags($_POST["pasaporte"],ENT_QUOTES)));
+		$fp=mysqli_real_escape_string($con,(strip_tags($_POST["fechaPasa"],ENT_QUOTES)));
+		$fp  =date("H:i:s", strtotime($fp));
+
  
-
-
-		$sql="INSERT INTO AVI_PLAN_VUELO  (ID_AERONAVE, PROPIETARIO, AERO_SALIDA, AERO_LLEGADA, 
-		HORA_SALIDA, HORA_LLEGADA, FECHA_VIAJE,DECLA_SANITARIA, ESTATUS, ID_FIRMA)
-		 VALUES ('".$avion."','".$propietario."','".$sl."','".$ll."','".$sh."','".$lh."','".$fViaje."','".$declaracion."','".$estatus."','".$firma."')";
+		$sql="INSERT INTO AVI_TRIPULACION  (ID_PLAN, NOMBRE, APELLIDO, FUNCION, 
+		LICENCIA, NACIONALIDAD, FECHA_NAC, PASAPORTE,  EXP_PASAPORTE)
+		 VALUES ('".$id."','".$nom."','".$apel."','".$fun."','".$lic."','".$nac."','".$fn."','".$pasaporte."','".$fp."')";
 		$query_update = mysqli_query($con,$sql);
 			if ($query_update){
 				$messages[] = "Los datos han sido guardados satisfactoriamente.";

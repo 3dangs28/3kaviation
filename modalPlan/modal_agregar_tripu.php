@@ -21,10 +21,10 @@
 
     
 
-      <div class="form-row">
+<div class="form-row">
 
 <div class="form-group col-md-6">
-
+<input type="hidden" class="form-control" id="id" name="id" placeholder="plan">
 <label for="inputPassword4">Nombre</label>
 <input type="propietario" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
 </div>
@@ -43,12 +43,12 @@
 <div class="form-group col-md-6">
 
 <label for="inputPassword4">Función</label>
-<input type="propietario" class="form-control" id="nombre" name="nombre" placeholder="Función">
+<input type="propietario" class="form-control" id="funcion" name="funcion" placeholder="Función">
 </div>
 
 <div class="form-group col-md-6">
   <label for="inputPassword4">Licencia</label>
-  <input type="propietario" class="form-control" id="apellido" name="apellido" placeholder="Licencia">
+  <input type="propietario" class="form-control" id="licencia" name="licencia" placeholder="Licencia">
 </div>
  
 </div>
@@ -62,7 +62,7 @@
 
     <div class="form-group col-md-6">
       <label for="inputEmail4">Nacionalidad</label>
-      <select id="salidaLugar" name="salidaLugar" class="form-control">
+      <select id="nacionalidad" name="nacionalidad" class="form-control">
         <option selected>Seleccione país</option>
         <option>Panamá</option>
         <option>Costa Rica</option>
@@ -76,7 +76,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa fa-calendar"></i></span>
                     </div>
-                    <input type="text" id="fechaViaje" name="fechaViaje" class="form-control" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask="">
+                    <input type="text" id="fechaNac" name="fechaNac" class="form-control" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask="">
                   </div>
     </div>
 
@@ -97,7 +97,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa fa-calendar"></i></span>
                     </div>
-                    <input type="text" id="exp_pasapo" name="exp_pasapo" class="form-control" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask="">
+                    <input type="text" id="fechaPasa" name="fechaPasa" class="form-control" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask="">
                   </div>
     </div>
 
