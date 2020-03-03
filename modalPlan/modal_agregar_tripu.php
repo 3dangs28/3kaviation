@@ -1,7 +1,7 @@
 
 
 
-<form id="#guardarDatosTripu">
+<form id="guardarDatosTripu" >
 <div class="modal fade" id="dataRegisterTripu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
@@ -16,7 +16,7 @@
 
 
       <div class="modal-body">
-      <div id="datos_ajax_register"></div>
+      <div id="datos_ajax_tripula"></div>
 
 
     

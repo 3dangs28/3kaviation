@@ -11,7 +11,7 @@
 		$errors[] = "Tipo vacío";
 		 } 
 	 else if (empty($_POST['consumo'])){
-		$errors[] = "Consumo vacío";
+		$errors[] = "Consumo vacío, solo números";
 		 } 
 		
 		

@@ -5,8 +5,10 @@
 	<?php include("inc/menu.php"); ?>
   <?php include("modalPlan/modal_agregar.php");?>
   <?php include("modalPlan/modal_agregar_tripu.php");?>
+  <?php include("modalPlan/modal_agregar_pasa.php");?>
   <?php include("modalPlan/modal_modificar.php");?>
 	<?php include("modalPlan/modal_eliminar.php");?>
+  <?php include("modalPlan/modal_ver_reporte.php");?>
 	
 	 
 	<div id="loader" class="text-center"> <img src="giphy.gif"></div>

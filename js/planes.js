@@ -111,9 +111,8 @@ function load(page){
         modal.find('.modal-body #id').val(id)
   
       })
+   
   
-
-
       $( "#guardarDatosTripu" ).submit(function( event ) {
         var parametros = $(this).serialize();
              $.ajax({
@@ -121,13 +120,40 @@ function load(page){
                     url: "planes/agregarTripu.php",
                     data: parametros,
                      beforeSend: function(objeto){
-                        $("#datos_ajax_register").html("Mensaje: Cargando...");
+                        $("#datos_ajax_tripula").html("Mensaje: Cargando...");
                       },
                     success: function(datos){
-                    $("#datos_ajax_register").html(datos);
+                    $("#datos_ajax_tripula").html(datos);
                     
                     load(1);
                   }
             });
           event.preventDefault();
         });
+
+     
+        $('#dataRegisterPasa').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Botón que activó el modal
+          var id = button.data('id') // Extraer la información de atributos de datos
+          var modal = $(this)
+          modal.find('.modal-body #id').val(id)
+    
+        })
+  
+        $( "#guardarDatosPasa" ).submit(function( event ) {
+          var parametros = $(this).serialize();
+               $.ajax({
+                      type: "POST",
+                      url: "planes/agregarPasa.php",
+                      data: parametros,
+                       beforeSend: function(objeto){
+                          $("#datos_ajax_pasa").html("Mensaje: Cargando...");
+                        },
+                      success: function(datos){
+                      $("#datos_ajax_pasa").html(datos);
+                      
+                      load(1);
+                    }
+              });
+            event.preventDefault();
+          });

@@ -13,11 +13,14 @@
 		else if (empty($_POST['apellido'])){
 			$errors[] = "Apellido vacío";
 		} 
-		else if (empty($_POST['funcion'])){
-			$errors[] = "Función vacío";
+		else if (empty($_POST['documento'])){
+			$errors[] = "Documento vacío";
 		} 
-		else if (empty($_POST['licencia'])){
-			$errors[] = "Licencia vacío";
+		else if (empty($_POST['tdocu'])){
+			$errors[] = "Tipo de documento vacío";
+		} 
+		else if (empty($_POST['fechaDocu'])){
+			$errors[] = "Fecha de expiracion de pasaporte vacío";
 		} 
 		else if (empty($_POST['nacionalidad'])){
 			$errors[] = "Nacionalidad vacío";
@@ -25,24 +28,18 @@
 		else if (empty($_POST['fechaNac'])){
 			$errors[] = "Fecha de nacimiento vacío";
 		} 
-		else if (empty($_POST['pasaporte'])){
-			$errors[] = "Pasaporte vacío";
-		} 
-
-		else if (empty($_POST['fechaPasa'])){
-			$errors[] = "Fecha de expiracion de pasaporte vacío";
-		} 
+	
+	
 	 
 		else if (
 			!empty($_POST['id']) && 
 			!empty($_POST['nombre']) &&
 			!empty($_POST['apellido']) &&
-			!empty($_POST['funcion']) && 
-			!empty($_POST['licencia']) && 
 			!empty($_POST['nacionalidad']) && 
 			!empty($_POST['fechaNac']) &&
-			!empty($_POST['pasaporte']) &&
-			!empty($_POST['fechaPasa']) 
+			!empty($_POST['documento']) && 
+			!empty($_POST['tdocu']) && 
+			!empty($_POST['fechaDocu']) 
 			
 		){
 
@@ -50,16 +47,16 @@
 		$id=intval($_POST['id']);
 		$nom=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));
 		$apel=mysqli_real_escape_string($con,(strip_tags($_POST["apellido"],ENT_QUOTES)));
-		$fun=mysqli_real_escape_string($con,(strip_tags($_POST["funcion"],ENT_QUOTES)));
-		$lic=mysqli_real_escape_string($con,(strip_tags($_POST["licencia"],ENT_QUOTES)));
+		$doc=mysqli_real_escape_string($con,(strip_tags($_POST["documento"],ENT_QUOTES)));
+		$tdocu=mysqli_real_escape_string($con,(strip_tags($_POST["tdocu"],ENT_QUOTES)));
+		$fd=mysqli_real_escape_string($con,(strip_tags($_POST["fechaDocu"],ENT_QUOTES)));
 		$nac=mysqli_real_escape_string($con,(strip_tags($_POST["nacionalidad"],ENT_QUOTES)));
 		$fn=mysqli_real_escape_string($con,(strip_tags($_POST["fechaNac"],ENT_QUOTES)));
-		$pasaporte=mysqli_real_escape_string($con,(strip_tags($_POST["pasaporte"],ENT_QUOTES)));
-		$fp=mysqli_real_escape_string($con,(strip_tags($_POST["fechaPasa"],ENT_QUOTES)));
+	
 
-		$sql="INSERT INTO AVI_TRIPULACION  (ID_PLAN, NOMBRE, APELLIDO, FUNCION, 
-		LICENCIA, NACIONALIDAD, FECHA_NAC, PASAPORTE,  EXP_PASAPORTE)
-		 VALUES ('".$id."','".$nom."','".$apel."','".$fun."','".$lic."','".$nac."','".$fn."','".$pasaporte."','".$fp."')";
+		$sql="INSERT INTO AVI_PASAJEROS  (ID_PLAN, NOMBRE, APELLIDO, DOCUMENTO, 
+		TIPO_DOCUMENTO, EXP_DOCUMENTO, NACIONALIDAD, FECHA_NAC)
+		 VALUES ('".$id."','".$nom."','".$apel."','".$doc."','".$tdocu."','".$fd."','".$nac."','".$fn."')";
 		$query_update = mysqli_query($con,$sql);
 			if ($query_update){
 				$messages[] = "Los datos han sido guardados satisfactoriamente.";

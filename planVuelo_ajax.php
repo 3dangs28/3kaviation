@@ -1,5 +1,5 @@
 <?php
- 
+  
 require_once("conn/conexion.php");
 		
 	$action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
@@ -52,7 +52,7 @@ require_once("conn/conexion.php");
                  
                <td>	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#dataRegisterTripu" data-id="<?php echo $row['ID_PLAN']?>" ><i class='nav-icon fa fa-plane' ></i><i class='nav-icon fa fa-plus-circle' ></i></button>
 							 </td>
-							 <td>	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#dataAgregarTripulante" ><i class='nav-icon fa fa-user-plus' ></i></button>
+							 <td>	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#dataRegisterPasa"  data-id="<?php echo $row['ID_PLAN']?>" ><i class='nav-icon fa fa-user-plus' ></i></button>
 							 </td>
            
 							 <td>
@@ -79,11 +79,12 @@ require_once("conn/conexion.php");
                          
                          ><i class='nav-icon fa fa-pencil'></i></button>
 						<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#dataDelete" data-id="<?php echo $row['ID_PLAN']?>"  ><i class='nav-icon fa fa-trash' ></i></button>
+						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#vista"  data-id="<?php echo $row['ID_PLAN']?>" ><i class='nav-icon fa fa-file-o' ></i></button>
 					</td>
 				</tr>
 				<?php
             }
-					
+					 
 			?>
 			</tbody>
 		</table>
@@ -104,10 +105,6 @@ require_once("conn/conexion.php");
 	mysqli_close($con);
 ?>
 
-
-
-
-<script src="js/planes.js"></script>
   <script>
   $(function () {
     $("#example1").DataTable();
