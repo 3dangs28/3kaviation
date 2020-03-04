@@ -10,7 +10,7 @@
 	<?php include("modalPlan/modal_eliminar.php");?>
   <?php include("modalPlan/modal_ver_reporte.php");?>
 	
-	 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
 	<div id="loader" class="text-center"> <img src="giphy.gif"></div>
   <div class="content-wrapper">
 
@@ -63,7 +63,7 @@
 
   <?php include("inc/scripts.php"); ?>
   <script src="js/planes.js"></script>
-  <script src="plugins/jquery/jquery.min.js"></script>
+   <!-- <script src="plugins/jquery/jquery.min.js"></script>-->
 
 
 
@@ -79,20 +79,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
 <script src="plugins/daterangepicker/daterangepicker.js"></script>
 <!-- bootstrap color picker -->
-<script src="plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
-<!-- bootstrap time picker -->
-<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
-<!-- SlimScroll 1.3.0 -->
-<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- iCheck 1.0.1 -->
-<script src="plugins/iCheck/icheck.min.js"></script>
-<!-- FastClick -->
-<script src="plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
 
+<script src="plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+
+<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
+<script src="plugins/iCheck/icheck.min.js"></script>
+<!--
+<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+
+<script src="plugins/fastclick/fastclick.js"></script>
+
+<script src="dist/js/adminlte.min.js"></script>
+
+<script src="dist/js/demo.js"></script>
+-->
   <script>
   $(function () {
 

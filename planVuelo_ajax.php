@@ -9,7 +9,7 @@ require_once("conn/conexion.php");
 		//Cuenta el número total de filas de la tabla*/
 		$count_query   = mysqli_query($con,"SELECT count(*) AS numrows FROM AVI_PLAN_VUELO");
 		
-
+ 
 		if ($row= mysqli_fetch_array($count_query)){$numrows = $row['numrows'];}
 
 		$reload = 'index.php';
@@ -35,7 +35,8 @@ require_once("conn/conexion.php");
 				<th>Tripu.</th>
 				<th>Pasaj.</th>
         <th>Status</th>
-		<th>Acciones</th>
+	    	<th>Acciones</th>
+	    	<th>Doc.</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -76,10 +77,16 @@ require_once("conn/conexion.php");
                         data-llegada="<?php echo $row['AERO_LLEGADA']?>"
                         data-fecha="<?php echo $row['FECHA_VIAJE']?>" 
 					    data-estatus="<?php echo $row['ESTATUS']?>"
-                         
+                          
                          ><i class='nav-icon fa fa-pencil'></i></button>
 						<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#dataDelete" data-id="<?php echo $row['ID_PLAN']?>"  ><i class='nav-icon fa fa-trash' ></i></button>
-						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#vista"  data-id="<?php echo $row['ID_PLAN']?>" ><i class='nav-icon fa fa-file-o' ></i></button>
+			
+					</td>
+					<td>
+					<form action="informe.php" method="POST">
+						<input type="hidden" name="id" id="id" value="<?php echo $row['ID_PLAN']?>"/>
+						<button type="submit" class="btn btn-success"><i class='nav-icon fa fa-file-o' ></i></button>
+			   	</form>
 					</td>
 				</tr>
 				<?php

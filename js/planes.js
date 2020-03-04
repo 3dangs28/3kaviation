@@ -104,6 +104,9 @@ function load(page){
         event.preventDefault();
       });
 
+
+
+
       $('#dataRegisterTripu').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Botón que activó el modal
         var id = button.data('id') // Extraer la información de atributos de datos
