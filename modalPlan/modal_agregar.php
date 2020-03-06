@@ -26,7 +26,7 @@
 <div class="form-group col-md-6">
 
 
-
+  
 <label for="inputPassword4">Modelo</label>
 
   <?php require_once("conn/conexion.php");
